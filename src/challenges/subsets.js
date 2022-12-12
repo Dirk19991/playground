@@ -2,7 +2,7 @@ var subsets = function (nums) {
   let results = [[]];
 
   function dfs(index, array, slate = []) {
-    if (index === nums.length) {
+    if (index === 0) {
       results.push(slate);
       return;
     }
@@ -19,7 +19,7 @@ var subsets = function (nums) {
     }
   }
 
-  dfs(0, nums, []);
+  dfs(nums.length - 1, nums, []);
 
   return results;
 };
