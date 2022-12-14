@@ -14,28 +14,28 @@
 // Output: [0,1,2]
 
 var sortColors = function (nums) {
-  let leftPointer = 0;
-  let rightPointer = nums.length - 1;
-  let i = 0;
+  let n = nums.length;
 
-  while (i <= rightPointer) {
+  for (let i = 0; i < n; i++) {
     if (nums[i] === 0) {
-      let temp = nums[i];
-      nums[i] = nums[leftPointer];
-      nums[leftPointer] = temp;
-      leftPointer++;
-      i++;
-    } else if (nums[i] === 2) {
-      let temp = nums[i];
-      nums[i] = nums[rightPointer];
-      nums[rightPointer] = temp;
-      rightPointer--;
-    } else if (nums[i] === 1) {
-      i++;
+      console.log(nums, i);
+      nums.splice(i, 1);
+      nums.unshift(0);
+
+      n--;
+      console.log(nums, i);
+      break;
+    }
+    if (nums[i] === 2) {
+      console.log(nums);
+      nums.splice(i, 1);
+      nums.push(2);
+      i--;
+      n--;
+      console.log(nums);
     }
   }
-
-  return nums;
+  console.log(nums);
 };
 
 console.log(sortColors([2, 0, 2, 1, 1, 0]));
