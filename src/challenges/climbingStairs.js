@@ -24,15 +24,14 @@
 // 3. 2 steps + 1 step + 1 step
 // 4.
 
-const memo = new Map();
-for (let n = 0; n < 4; n++) {
-  memo.set(n, n);
-}
-
 var climbStairs = function (n) {
-  if (memo.has(n)) {
-    return memo.get(n);
+  const table = Array(n + 1).fill(0);
+  table[table.length - 1] = 1;
+  table[table.length - 2] = 1;
+  for (let i = table.length - 3; i >= 0; i--) {
+    table[i] = table[i + 1] + table[i + 2];
   }
-  memo.set(n, climbStairs(n - 2) + climbStairs(n - 1));
-  return memo.get(n);
+  return table[0];
 };
+
+console.log(climbStairs(3));
