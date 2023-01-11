@@ -36,4 +36,4 @@ var countVowelStrings = function (n) {
   return letters.reduce((acc, elem) => acc + elem, 0);
 };
 
-console.log(countVowelStrings(33));
+console.log(countVowelStrings(3));

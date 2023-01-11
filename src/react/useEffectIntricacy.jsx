@@ -23,3 +23,9 @@ function ChildComponent(props) {
   console.log('rendering child');
   return <div>child</div>;
 }
+
+// rendering parent 
+// rendering child 
+// child component mounted 
+// on Parent mount 
+// on parent mount 2 
